@@ -1,0 +1,189 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+		sans-serif;
+}
+body {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-color: rgb(0, 16, 49);
+}
+main {
+	display: flex;
+	flex-direction: column;
+}
+#header {
+	color: white;
+	text-shadow: 0px 0px 12px black;
+	font-size: 5rem;
+	margin: 40px;
+}
+.headerSlidedOut {
+	position: fixed;
+	top: 5px;
+	left: 5px;
+	color: gray;
+	font-size: 2rem !important;
+	opacity: 0.9;
+}
+#startGameBtn,
+#howToPlayBtn {
+	padding: 0.8rem;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+	margin: 2rem;
+	background-color: rgb(84, 7, 172);
+	border: 2px solid rgb(116, 18, 228);
+	border-radius: 0.2rem;
+	transition: 0.5s ease-in-out;
+}
+#startGameBtn:hover,
+#howToPlayBtn:hover {
+	color: aliceblue;
+	outline: 4px solid rgb(87, 12, 173);
+	background-color: rgb(79, 11, 238);
+}
+#howToPlayImg {
+	position: absolute;
+	top: 48%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url("./howToPlay.jpg");
+	width: 488px;
+	height: 787px;
+	outline: 2px solid red;
+	border-radius: 0.8rem;
+	transition: 0.5s ease-in-out;
+	transform-origin: top left;
+	scale: 0;
+}
+#hideImg {
+	color: red;
+	font-size: 6rem;
+	font-weight: 900;
+	cursor: pointer;
+	text-align: end;
+	margin: -15px 0px 0 80%;
+	width: fit-content;
+	height: fit-content;
+	transition: 0.5s ease-in-out;
+}
+#hideImg:hover {
+	transform: scale(0.8);
+}
+#canvases {
+	display: flex;
+	justify-content: center;
+	width: 135%;
+}
+#game2D {
+	display: none;
+	scale: 0.5;
+	border: 1px solid black;
+	border-radius: 0.5rem;
+}
+#game1D {
+	display: none;
+	scale: 0.8;
+	border-radius: 0.5rem;
+}
+#score {
+	margin-top: 7vh;
+	color: white;
+	text-align: center;
+	font-weight: 700;
+	font-size: 3rem;
+	display: none;
+}
+#labelFor2DView {
+	color: white;
+}
+#question {
+	text-align: center;
+}
+#loseScreen {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(90deg, aliceblue, rgb(158, 232, 255));
+	border-radius: 0.5rem;
+	width: 27vw;
+	height: 60vh;
+	border: 10px solid rgb(90, 71, 255);
+	text-align: center;
+}
+#loseScreen h1 {
+	font-size: 3.5rem;
+	font-weight: 900;
+	text-align: center;
+	padding-top: 3vh;
+}
+#loseScreen p {
+	text-align: center;
+	padding-top: 2vh;
+	font-size: 1.5rem;
+	font-weight: 700;
+}
+#loseScreen span {
+	font-size: 2rem;
+	font-weight: 900;
+}
+#comment {
+	margin-top: 3vh;
+	font-weight: 700;
+	font-size: 1.2rem;
+}
+.btnsInLoseScreen {
+	width: 70px;
+	height: 70px;
+	border-radius: 0.2rem;
+	border: none;
+	background-color: transparent;
+	padding: 0.5rem;
+	transition: 0.1s linear;
+	margin: 3vh 1vw;
+	cursor: pointer;
+}
+#restartBtn:hover {
+	transform: rotate(75deg);
+}
+#homeBtn:hover {
+	transform: scale(0.8);
+}
+@media only screen and (max-width: 1200px) {
+	#loseScreen {
+		width: 80vw;
+	}
+}
+@media only screen and (max-width: 750px) {
+	#question {
+		display: none;
+	}
+	#canvases {
+		width: 100%;
+	}
+	.headerSlidedOut {
+		margin: 15px 15px !important;
+		top: 0;
+		left: 0;
+	}
+}
+@media only screen and (max-width: 600px) {
+	#header {
+		font-size: 3rem;
+	}
+	#howToPlayImg {
+		background-position: center;
+		width: 388px;
+	}
+}
